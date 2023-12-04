@@ -1,34 +1,24 @@
 {
   "todos": [
     {
-      "text": "Sholat Subuh",
+      "text": "Makan Pagi",
       "completed": false,
-      "id": 1
-    },
-    {
-      "text": "test",
-      "completed": true,
       "id": 2
     },
     {
-      "text": "mandi ky",
-      "completed": true,
+      "text": "Jogging 2 Km",
+      "completed": false,
       "id": 3
     },
     {
-      "text": "asdfsaf",
+      "text": "Snack dan Coffee time",
       "completed": false,
       "id": 4
     },
     {
-      "text": "asdfd",
-      "completed": true,
-      "id": 5
-    },
-    {
-      "text": "Minuman",
+      "text": "Sholat Subuh",
       "completed": false,
-      "id": 6
+      "id": 5
     }
   ]
 }
