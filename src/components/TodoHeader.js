@@ -3,14 +3,15 @@
 import React from 'react';
 import { useState } from 'react';
 
-const TodoTextInput = ({ onCreate }) => {
+const TodoHeader = ({ addTodo }) => {
 	const [todoInput, setTodoInput] = useState('');
 	const handleChange = (e) => {
 		setTodoInput(e.target.value);
 	};
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		onCreate(todoInput);
+		addTodo(todoInput);
+		setTodoInput('')
 	};
 	return (
 		<>
@@ -41,4 +42,4 @@ const TodoTextInput = ({ onCreate }) => {
 	);
 };
 
-export default TodoTextInput;
+export default TodoHeader;

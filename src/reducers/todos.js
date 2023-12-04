@@ -4,27 +4,21 @@ import {
     EDIT_TODO,
     COMPLETE_TODO,
     COMPLETE_ALL_TODOS,
-    CLEAR_COMPLETED
+    CLEAR_COMPLETED,
+    GET_TODOS
   } from '../constants/ActionTypes'
   
-  const initialState = [
-    {
-      text: 'Use Redux',
-      completed: false,
-      id: 0
-    }
-  ]
+  const initialState = []
   
   export default function todos(state = initialState, action) {
-    switch (action.type) {
+    const {type, payload} = action
+    switch (type) {
+      case GET_TODOS:
+        return payload
       case ADD_TODO:
         return [
           ...state,
-          {
-            id: state.reduce((maxId, todo) => Math.max(todo.id, maxId), -1) + 1,
-            completed: false,
-            text: action.text
-          }
+          payload
         ]
   
       case DELETE_TODO:
@@ -34,8 +28,8 @@ import {
   
       case EDIT_TODO:
         return state.map(todo =>
-          todo.id === action.id ?
-            { ...todo, text: action.text } :
+          todo.id === payload.id ?
+          { ...todo, ...payload } :
             todo
         )
   

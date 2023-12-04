@@ -1,19 +1,21 @@
 /** @format */
 
 import React from 'react';
+import { GrClose } from "react-icons/gr";
 
-const TodoItem = ({ todo, handleComplete, deleteTodo }) => {
+const TodoItem = ({ todo, editTodo, deleteTodo }) => {
 	const handleClick = () => {
-		handleComplete(todo.id);
+		editTodo(todo);
 	};
 	return (
 		<li className= {`todo-item ${todo.completed ? 'checked' : ''}`}  >
 			<div
 				onClick={handleClick}
+				className='todo-text'
 				>
 				{todo.text}
 			</div>
-			<div onClick={() => deleteTodo(todo.id)}>close</div>
+			<div className='todo-delete' onClick={() => deleteTodo(todo.id)}><GrClose/></div>
 		</li>
 	);
 };

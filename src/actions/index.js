@@ -1,9 +1,40 @@
 import * as types from '../constants/ActionTypes'
+import { createTodoApi, editTodoApi, fetchTodosApi, deleteTodoApi } from '../api/todos'
 
-export const addTodo = text => ({ type: types.ADD_TODO, text })
-export const deleteTodo = id => ({ type: types.DELETE_TODO, id })
-export const editTodo = (id, text) => ({ type: types.EDIT_TODO, id, text })
-// export const completeTodo = id => ({ type: types.COMPLETE_TODO, id })
-// export const completeAllTodos = () => ({ type: types.COMPLETE_ALL_TODOS })
-// export const clearCompleted = () => ({ type: types.CLEAR_COMPLETED })
-// export const setVisibilityFilter = filter => ({ type: types.SET_VISIBILITY_FILTER, filter})
+export const addTodo = text => async (dispatch) => {
+    try {
+        const todo = {text: text, completed : false}
+        const res = await createTodoApi(todo)
+        dispatch({
+            type: types.ADD_TODO, payload: res.data
+        })
+    } catch (error) {
+        console.log(error)
+    }
+}
+export const deleteTodo = id => async (dispatch) => {
+    try {
+        await deleteTodoApi(id)
+        dispatch({ type: types.DELETE_TODO, id })
+    }
+    catch (error) {
+        console.log(error)
+    }
+}
+export const editTodo = (todo) => async(dispatch) => {
+    try {
+        const editedTodo = {...todo, completed: !todo.completed }
+        const res = await editTodoApi(todo.id, editedTodo) 
+        dispatch({ type: types.EDIT_TODO, payload: res.data })
+    } catch (error) {
+        
+    }
+}
+export const getTodos = () => async(dispacth) => {
+    try {
+        const res = await fetchTodosApi()
+        dispacth({type: types.GET_TODOS, payload: res.data})
+    } catch (error) {
+        console.log(error)
+    }
+}

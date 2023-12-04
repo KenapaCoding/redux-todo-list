@@ -1,0 +1,34 @@
+{
+  "todos": [
+    {
+      "text": "Sholat Subuh",
+      "completed": false,
+      "id": 1
+    },
+    {
+      "text": "test",
+      "completed": true,
+      "id": 2
+    },
+    {
+      "text": "mandi ky",
+      "completed": true,
+      "id": 3
+    },
+    {
+      "text": "asdfsaf",
+      "completed": false,
+      "id": 4
+    },
+    {
+      "text": "asdfd",
+      "completed": true,
+      "id": 5
+    },
+    {
+      "text": "Minuman",
+      "completed": false,
+      "id": 6
+    }
+  ]
+}
