@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import TodoHeader from '../containers/TodoHeader';
-import TodoList from '../containers/TodoList';
+import TodoHeader from '../components/TodoHeader';
+import TodoList from '../components/TodoList';
+import { useEffect } from "react";
 
 const TodosPages = () => {
 	return (

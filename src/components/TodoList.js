@@ -1,8 +1,7 @@
 /** @format */
 
 import React, { useEffect } from 'react';
-// import TodoItem from './TodoItem';
-import TodoItem from '../containers/TodoItem';
+import TodoItem from '../components/TodoItem';
 
 const TodoList = ({ todos, getTodos }) => {
 	useEffect(() => {
