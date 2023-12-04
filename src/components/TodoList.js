@@ -1,16 +1,13 @@
 /** @format */
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import TodoItem from '../components/TodoItem';
 
-const TodoList = ({ todos, getTodos }) => {
-	useEffect(() => {
-		getTodos()
-	}, [])
+const TodoList = ({ todos, editTodo, deleteTodo}) => {
 	return (
 		<ul className='todo-list'>
 			{todos.map((todo) => {
-				return <TodoItem  key={todo.id} todo={todo}/>;
+				return <TodoItem  key={todo.id} todo={todo} editTodo={editTodo} deleteTodo={deleteTodo}/>;
 			})}
 		</ul>
 	);
