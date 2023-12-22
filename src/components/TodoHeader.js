@@ -23,11 +23,6 @@ const TodoHeader = ({ addTodo }) => {
 						placeholder='Add Todo'
 						value={todoInput}
 						onChange={handleChange}
-						// autoFocus={true}
-						// value={this.state.text}
-						// onBlur={this.handleBlur}
-						// onChange={this.handleChange}
-						// onKeyDown={this.handleSubmit}
 					/>
 					<input
 					type='submit'
