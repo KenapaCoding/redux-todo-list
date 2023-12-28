@@ -1,29 +1,14 @@
 {
   "todos": [
     {
-      "text": "Makan Pagi",
-      "completed": false,
-      "id": 2
+      "text": "e",
+      "completed": true,
+      "id": 21
     },
     {
-      "text": "Jogging 2 Km",
+      "text": "asdf",
       "completed": false,
-      "id": 3
-    },
-    {
-      "text": "Snack dan Coffee time",
-      "completed": false,
-      "id": 4
-    },
-    {
-      "text": "Sholat Subuh",
-      "completed": false,
-      "id": 5
-    },
-    {
-      "text": "pergi ke pasar",
-      "completed": false,
-      "id": 6
+      "id": 22
     }
   ]
 }

@@ -2,15 +2,19 @@
 
 import React from 'react';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addTodo } from '../store/slices/thunks/addTodo';
 
-const TodoHeader = ({ addTodo }) => {
+const TodoHeader = () => {
+	const dispatch = useDispatch()
 	const [todoInput, setTodoInput] = useState('');
 	const handleChange = (e) => {
 		setTodoInput(e.target.value);
 	};
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		addTodo(todoInput);
+		const todo = {text: todoInput, completed : false}
+		dispatch(addTodo(todo))
 		setTodoInput('')
 	};
 	return (
